@@ -1,0 +1,13 @@
+# Schema test
+
+version: 2
+
+models:
+  - name: stg_customers
+    description: Staged customer data for Marketing campaign.
+    columns: 
+      - name: id
+        description: Primary key for customers.
+        tests:
+          - unique
+          - not_null

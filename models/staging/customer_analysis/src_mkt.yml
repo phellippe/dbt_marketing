@@ -1,0 +1,31 @@
+# Schema test
+
+version: 2
+
+sources:
+  - name: mkt
+    description: Marketing analysis to find best customers.
+    database: dev
+    tables:
+      - name: customers
+        description: Raw customers data.
+        columns: 
+          - name: id
+            description: Primary key for customers.
+            tests:
+              - unique
+              - not_null
+          - name: year_birth
+            description: Birthday year of customers
+            tests:
+              - not_null
+          - name: education
+            description: Education level of customer
+            tests:
+              - not_null
+          - name: marital_status
+            description: Marital status of customer
+            tests:
+              - not_null
+          - name: income
+            description: Amount of money received by customer

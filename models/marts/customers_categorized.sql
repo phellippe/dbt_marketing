@@ -7,7 +7,7 @@ with customers as (
 categorized as (
     select customer_id,
     {% for education in educations %}
-    (case when education = '{{education}}' then {{income_cents('income',2)}} else 0 end) as "Income_by_{{education}}"
+    (case when education = '{{education}}' then {{income_cents('income')}} else 0 end) as "Income_by_{{education}}"
     {%- if not loop.last-%}
     ,
     {% endif -%}
